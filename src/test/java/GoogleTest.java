@@ -21,6 +21,13 @@ public class GoogleTest {
         //verificam pagina curenta
         Assert.assertEquals(url, driver.getCurrentUrl());
 
+        //asteapta 3 secunde inainte sa inchida pagina
+
+        try {
+            Thread.sleep(3000);} catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         //inchidem pagina
         driver.close();
     }
