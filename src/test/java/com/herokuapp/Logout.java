@@ -30,6 +30,7 @@ public class Logout {
         WebElement loginButton = driver.findElement(By.className("radius"));
         loginButton.click();
 
+        //tema
         //Logout
 
         WebElement logoutButton = driver.findElement(By.className("icon-signout"));
@@ -38,5 +39,7 @@ public class Logout {
         WebElement logoutArea = driver.findElement(By.xpath("//*[@id=\"flash\"]"));
         Assert.assertTrue(logoutArea.getText().contains("You logged out of the secure area!"));
         driver.close();
+
+
     }
 }

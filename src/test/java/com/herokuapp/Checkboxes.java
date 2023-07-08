@@ -25,6 +25,17 @@ public class Checkboxes {
         checkbox2.click();
         }
         Assert.assertTrue(checkbox2.isSelected());
+
+        //tema
+        if (checkbox1.isSelected()) {
+            checkbox1.click();
+        }
+            if(checkbox2.isSelected()){
+                checkbox2.click();
+            }
+
+        Assert.assertFalse(checkbox1.isSelected());
+        Assert.assertFalse(checkbox2.isSelected());
         driver.close();
     }
 }

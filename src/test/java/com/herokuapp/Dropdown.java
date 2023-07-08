@@ -23,6 +23,11 @@ public class Dropdown {
 
         WebElement option1 = driver.findElement(By.xpath("//*[@id=\"dropdown\"]/option[2]"));
         Assert.assertTrue(option1.isSelected());
+
+        //tema
+        dropdownElement.selectByValue("2");
+        WebElement option2 = driver.findElement(By.xpath("//*[@id=\"dropdown\"]/option[3]"));
+        Assert.assertTrue(option2.isSelected());
         driver.close();
 
     }
