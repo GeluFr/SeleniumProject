@@ -36,6 +36,7 @@ public class Logout {
         WebElement logoutButton = driver.findElement(By.className("icon-signout"));
         logoutButton.click();
 
+        //verificare
         WebElement logoutArea = driver.findElement(By.xpath("//*[@id=\"flash\"]"));
         Assert.assertTrue(logoutArea.getText().contains("You logged out of the secure area!"));
         driver.close();

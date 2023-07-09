@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class Checkboxes {
     @Test
-    public void checkBboxTest(){
+    public void checkBboxTest() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         String url = "https://the-internet.herokuapp.com/checkboxes";
@@ -27,6 +27,7 @@ public class Checkboxes {
         Assert.assertTrue(checkbox2.isSelected());
 
         //tema
+
         if (checkbox1.isSelected()) {
             checkbox1.click();
         }
@@ -36,6 +37,13 @@ public class Checkboxes {
 
         Assert.assertFalse(checkbox1.isSelected());
         Assert.assertFalse(checkbox2.isSelected());
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         driver.close();
     }
 }
