@@ -30,5 +30,6 @@ public class Dropdown {
         Assert.assertTrue(option2.isSelected());
         driver.close();
 
+
     }
 }
