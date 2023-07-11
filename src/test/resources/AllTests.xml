@@ -20,4 +20,23 @@
             <class name="com.herokuapp.Dropdown" />
         </classes>
     </test>
+
+    <test name="Upload" >
+        <classes>
+            <class name="com.herokuapp.Upload" />
+        </classes>
+    </test>
+
+    <test name="Download" >
+        <classes>
+            <class name="com.herokuapp.Download" />
+        </classes>
+    </test>
+
+    <test name="Inputs" >
+        <classes>
+            <class name="com.herokuapp.Inputs" />
+        </classes>
+    </test>
+
 </suite>
