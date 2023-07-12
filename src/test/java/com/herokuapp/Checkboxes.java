@@ -8,7 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Checkboxes {
-    @Test
+    @Test(groups = {"Regression","Smoke"})
     public void checkBboxTest() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -21,12 +21,12 @@ public class Checkboxes {
         Assert.assertTrue(checkbox1.isSelected());
 
         WebElement checkbox2 = driver.findElement(By.xpath("//*[@id=\"checkboxes\"]/input[2]"));
-        if (!checkbox2.isSelected()){
-        checkbox2.click();
+        if (!checkbox2.isSelected()) {
+            checkbox2.click();
         }
         Assert.assertTrue(checkbox2.isSelected());
 
-        //tema
+
 
         if (checkbox1.isSelected()) {
             checkbox1.click();
@@ -44,6 +44,6 @@ public class Checkboxes {
             throw new RuntimeException(e);
         }
 
-        driver.close();
-    }
+        driver.close();}
+
 }
