@@ -30,6 +30,10 @@ public class Dropdown {
         Assert.assertTrue(option2.isSelected());
         driver.close();
 
+        //State and City
+        WebElement stateSelect = driver.findElement(By.xpath("//*[@id=\"state\"]/div/div[1]/div[1]"));
+
+
 
     }
 }
