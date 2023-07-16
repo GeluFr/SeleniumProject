@@ -98,7 +98,7 @@ public class RegistrationForm {
 
         //Current Address
         WebElement currentAddress = driver.findElement(By.id("currentAddress"));
-        currentAddress.sendKeys("Str.Siretului, nr.1, Cluj-Napoca,Romania, zip code 400534");
+        currentAddress.sendKeys("Str.Memorandumului, nr.1, Cluj-Napoca,Romania, zip code 400534");
 
 
 
