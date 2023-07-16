@@ -1,14 +1,12 @@
 package com.demoqa;
 
 import org.checkerframework.checker.nullness.qual.EnsuresKeyForIf;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -100,22 +98,31 @@ public class RegistrationForm {
         WebElement currentAddress = driver.findElement(By.id("currentAddress"));
         currentAddress.sendKeys("Str.Memorandumului, nr.1, Cluj-Napoca,Romania, zip code 400534");
 
+        //State and city
+                  //State
+        WebElement stateSelect = driver.findElement(By.xpath("//*[@id=\"react-select-3-input\"]"));
+        stateSelect.sendKeys("Haryana");
+        new Actions(driver).sendKeys(Keys.ENTER).perform();
+                 //City
+        WebElement citySelect = driver.findElement(By.xpath("//*[@id=\"react-select-4-input\"]"));
+        citySelect.sendKeys("Panipat");
+        new Actions(driver).sendKeys(Keys.ENTER).perform();
 
+        //Submit
+        WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"submit\"]"));
+        submitButton.click();
 
-
-
-
-
-
-
-
-
-
-
-
+        //Succesfully Submited
+        WebElement succesSubmit = driver.findElement(By.xpath("//*[@id=\"example-modal-sizes-title-lg\"]"));
+        Assert.assertTrue(succesSubmit.getText().contains("Thanks for submitting the form"));
 
     }
+@AfterMethod(alwaysRun = true)
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(3000);
 
+        driver.close();
+}
 
 
 }
