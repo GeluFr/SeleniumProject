@@ -115,11 +115,17 @@ public class RegistrationForm {
         //Succesfully Submited
         WebElement succesSubmit = driver.findElement(By.xpath("//*[@id=\"example-modal-sizes-title-lg\"]"));
         Assert.assertTrue(succesSubmit.getText().contains("Thanks for submitting the form"));
+        Thread.sleep(3000);
+
+        //Close form
+        WebElement closeFormButton = driver.findElement(By.xpath("//*[@id=\"closeLargeModal\"]"));
+        closeFormButton.click();
 
     }
 @AfterMethod(alwaysRun = true)
     public void tearDown() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(2000);
+
 
         driver.close();
 }
